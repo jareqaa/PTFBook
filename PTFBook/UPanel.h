@@ -2,6 +2,7 @@
 #include "UControl.h"
 #include "AboutBox.h"
 #include <msclr/marshal_cppstd.h>
+#include "UException.h"
 
 namespace PTFBook {
 
@@ -292,9 +293,9 @@ namespace PTFBook {
 		{
 			ctl->add(TAbonent(name, phone_number));
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 
 		updateListBox();
@@ -312,9 +313,9 @@ namespace PTFBook {
 		{
 			ctl->deleteRec(listBox1->SelectedIndex);
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 
 		updateListBox();
@@ -329,9 +330,9 @@ namespace PTFBook {
 			textBox2->Text = "";
 			MessageBox::Show("Data has been saved", "Success", MessageBoxButtons::OK);
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 	}
 
@@ -346,9 +347,9 @@ namespace PTFBook {
 			ctl->deleteRec(listBox1->SelectedIndex);
 			ctl->add(TAbonent(name, phone_number));
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 
 		updateListBox();
@@ -409,11 +410,11 @@ namespace PTFBook {
 				listBox1->SelectedIndex = index;
 			}
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
 			if (ind == 0)
 			{
-				MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+				MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 				listBox1->SelectedIndex = -1;
 				textBox1->Text = "";
 				textBox2->Text = "";
@@ -444,9 +445,9 @@ namespace PTFBook {
 			ctl->readFromFile();
 			updateListBox();
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 	}
 
@@ -480,9 +481,9 @@ namespace PTFBook {
 			updateListBox();
 			MessageBox::Show("Data has been loaded", "Success", MessageBoxButtons::OK);
 		}
-		catch (std::string& err)
+		catch (TException& err)
 		{
-			MessageBox::Show(gcnew String(err.c_str()), "Error!", MessageBoxButtons::OK);
+			MessageBox::Show(gcnew String(err.what()), "Error!", MessageBoxButtons::OK);
 		}
 	}
 	};

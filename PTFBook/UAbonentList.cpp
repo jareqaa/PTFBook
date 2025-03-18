@@ -1,4 +1,5 @@
 #include "UAbonentList.h"
+#include "UException.h"
 
 // перерузка оператора []
 const TAbonent& TAbonentList::operator[](const int& i) const
@@ -6,7 +7,7 @@ const TAbonent& TAbonentList::operator[](const int& i) const
     // проверка правильности параметра i
     if (i < 0  || i >= count())
     {
-        throw std::string{ "Error! Wrong index...\n" };
+        throw TException("Error! Wrong index...\n");
     }
 
     auto it = std::next(flist.begin(), i);  // получаем итератор на i-ый элемент
@@ -24,7 +25,7 @@ int TAbonentList::find(const TAbonent& rec) const
     }
     else
     {
-        throw std::string{ "Error! Element doesnt exist...\n" };
+        throw TException("Error! Element doesnt exist...\n");
     }
 }
 
@@ -41,7 +42,7 @@ int TAbonentList::find(const std::string& field, const int& start_pos) const
     }
     else
     {
-        throw std::string{ "Error! Element doesnt exist...\n" };
+        throw TException("Error! Element doesnt exist...\n");
     }
 }
 
@@ -52,7 +53,7 @@ void TAbonentList::deleteRec(const TAbonent& rec)
 
     if (!f)
     {
-        throw std::string{ "Error! Element doesnt exist...\n" };
+        throw TException("Error! Element doesnt exist...\n");
     }
 }
 
@@ -62,7 +63,7 @@ void TAbonentList::deleteRec(const int& i)
     // проверка правильности параметра i
     if (i < 0 || i >= count())
     {
-        throw std::string{ "Error! Wrong index...\n" };
+        throw TException("Error! Wrong index...\n");
     }
 
     auto it = std::next(flist.begin(), i);  // получаем итератор на i-ый элемент
@@ -72,5 +73,5 @@ void TAbonentList::deleteRec(const int& i)
 void TAbonentList::add(const TAbonent& rec)
 {
     if (!flist.insert(rec).second)
-        throw std::string{ "Error! Element already exists...\n" };
+        throw TException("Error! Element already exists...\n");
 }

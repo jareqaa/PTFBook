@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "UException.h"
 
 struct Trec
 {
@@ -8,8 +9,8 @@ struct Trec
 
     // конструктор
     Trec(const std::string& name_, const std::string& phone_number_) :
-        name(!name_.empty() ? name_ : throw std::string{ "Error! Empty input...\n" }),
-        phone_number(!phone_number_.empty() ? phone_number_ : throw std::string{ "Error! Empty input...\n" }) {
+        name(!name_.empty() ? name_ : throw TException("Error! Empty input...\n")),
+        phone_number(!phone_number_.empty() ? phone_number_ : throw TException("Error! Empty input...\n")) {
     }
 
     // перегрузка оператора <

@@ -1,5 +1,6 @@
 #include "UFile.h"
 #include <fstream>
+#include "UException.h"
 
 // сохранение книги в файл
 void TFile::saveToFile(const TAbonentList& fl) const
@@ -10,7 +11,7 @@ void TFile::saveToFile(const TAbonentList& fl) const
     // проверка что файл открылся
     if (!file.is_open())
     {
-        throw std::string{ "Error! Cant open file...\n" };
+        throw TException("Error! Cant open file...\n");
     }
 
     // запись в файл
@@ -31,7 +32,7 @@ void TFile::readFromFile(TAbonentList& fl) const
     // проверка что файл открылся
     if (!file.is_open())
     {
-        throw std::string{ "Error! Cant open file...\n" };
+        throw TException("Error! Cant open file...\n");
     }
 
     fl.clear();
