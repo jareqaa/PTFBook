@@ -2,54 +2,54 @@
 
 class TControl
 {
-	TAbonentList fl;	// список абонентов
+	TAbonentList fl;  // СЃРїРёСЃРѕРє Р°Р±РѕРЅРµРЅС‚РѕРІ
 
-	std::string file_name = "file.txt";	// имя файла на диске
+	std::string file_name = "file.txt";  // РёРјСЏ С„Р°Р№Р»Р° РЅР° РґРёСЃРєРµ
 
 public:
 
-	// получение количества записей в книге
+	// РїРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° Р·Р°РїРёСЃРµР№ РІ РєРЅРёРіРµ
 	int count() const { return fl.count(); }
 
-	// получение записи из книги по номеру
+	// РїРѕР»СѓС‡РµРЅРёРµ Р·Р°РїРёСЃРё РёР· РєРЅРёРіРё РїРѕ РЅРѕРјРµСЂСѓ
 	TAbonent get(const int& i) const { return fl[i]; }
 
-	// получение записи в виде строки по номеру
+	// РїРѕР»СѓС‡РµРЅРёРµ Р·Р°РїРёСЃРё РІ РІРёРґРµ СЃС‚СЂРѕРєРё РїРѕ РЅРѕРјРµСЂСѓ
 	std::string getStr(const int& i) const { return fl[i].toStr(); }
 
-	// полчение поля имени абонента по номеру записи
+	// РїРѕР»С‡РµРЅРёРµ РїРѕР»СЏ РёРјРµРЅРё Р°Р±РѕРЅРµРЅС‚Р° РїРѕ РЅРѕРјРµСЂСѓ Р·Р°РїРёСЃРё
 	std::string getName(const int& i) const { return fl[i].get().name; }
 
-	// полчение поля номера телефона абонента по номеру записи
+	// РїРѕР»С‡РµРЅРёРµ РїРѕР»СЏ РЅРѕРјРµСЂР° С‚РµР»РµС„РѕРЅР° Р°Р±РѕРЅРµРЅС‚Р° РїРѕ РЅРѕРјРµСЂСѓ Р·Р°РїРёСЃРё
 	std::string getPhoneNumber(const int& i) const { return fl[i].get().phone_number; }
 
-	// добавление записи в книгу
+	// РґРѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РєРЅРёРіСѓ
 	void add(const TAbonent& rec) { fl.add(rec); }
 
-	// удалить запись
+	// СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ
 	void deleteRec(const TAbonent& rec) { fl.deleteRec(rec); }
 
-	// удалить выделенную запись
+	// СѓРґР°Р»РёС‚СЊ РІС‹РґРµР»РµРЅРЅСѓСЋ Р·Р°РїРёСЃСЊ
 	void deleteRec(const int& i) { fl.deleteRec(i); }
 
-	// очистить книгу от записей
+	// РѕС‡РёСЃС‚РёС‚СЊ РєРЅРёРіСѓ РѕС‚ Р·Р°РїРёСЃРµР№
 	void clear() { fl.clear(); }
 
-	// сохранение книги в файл
+	// СЃРѕС…СЂР°РЅРµРЅРёРµ РєРЅРёРіРё РІ С„Р°Р№Р»
 	void saveToFile() const;
 
-	// копирование книги из файла
+	// РєРѕРїРёСЂРѕРІР°РЅРёРµ РєРЅРёРіРё РёР· С„Р°Р№Р»Р°
 	void readFromFile();
 
-	// поиск записи в книге
+	// РїРѕРёСЃРє Р·Р°РїРёСЃРё РІ РєРЅРёРіРµ
 	int find(const TAbonent& rec) const { return fl.find(rec); }
 
-	// поиск записи по одному из полей
+	// РїРѕРёСЃРє Р·Р°РїРёСЃРё РїРѕ РѕРґРЅРѕРјСѓ РёР· РїРѕР»РµР№
 	int find(const std::string& field, const int& start_pos = 0) const { return fl.find(field, start_pos); }
 
-	// получение имени файла
+	// РїРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р°
 	std::string getFileName() const { return file_name; }
 
-	// изменение имени файла
+	// РёР·РјРµРЅРµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р°
 	void setFileName(std::string& new_file_name) { file_name = new_file_name; }
 };

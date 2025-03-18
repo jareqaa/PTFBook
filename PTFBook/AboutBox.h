@@ -2,80 +2,80 @@
 
 namespace PTFBook {
 
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
+    using namespace System;
+    using namespace System::ComponentModel;
+    using namespace System::Collections;
+    using namespace System::Windows::Forms;
+    using namespace System::Data;
+    using namespace System::Drawing;
 
-	/// <summary>
-	/// Сводка для AboutBox
-	/// </summary>
-	public ref class AboutBox : public System::Windows::Forms::Form
-	{
-	public:
-		AboutBox(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
-		}
+    /// <summary>
+    /// РЎРІРѕРґРєР° РґР»СЏ AboutBox
+    /// </summary>
+    public ref class AboutBox : public System::Windows::Forms::Form
+    {
+    public:
+        AboutBox(void)
+        {
+            InitializeComponent();
+            //
+            //TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
+            //
+        }
 
-	protected:
-		/// <summary>
-		/// Освободить все используемые ресурсы.
-		/// </summary>
-		~AboutBox()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-	private: System::Windows::Forms::Label^ label1;
-	protected:
+    protected:
+        /// <summary>
+        /// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
+        /// </summary>
+        ~AboutBox()
+        {
+            if (components)
+            {
+                delete components;
+            }
+        }
+    private: System::Windows::Forms::Label^ label1;
+    protected:
 
-	private:
-		/// <summary>
-		/// Обязательная переменная конструктора.
-		/// </summary>
-		System::ComponentModel::Container^ components;
+    private:
+        /// <summary>
+        /// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
+        /// </summary>
+        System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
-		/// </summary>
-		void InitializeComponent(void)
-		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(13, 9);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(480, 39);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Данное приложение позволяет хранить номера телефонов абонентов.\r\nВ нем есть возмо"
-				L"жность добавить запись, изменить запись, найти запись, удалить запись,\r\nсохранит"
-				L"ь книгу в файл, считать книгу из файла.";
-			// 
-			// AboutBox
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(505, 345);
-			this->Controls->Add(this->label1);
-			this->Name = L"AboutBox";
-			this->Text = L"Справка";
-			this->ResumeLayout(false);
-			this->PerformLayout();
+        /// <summary>
+        /// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+        /// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
+        /// </summary>
+        void InitializeComponent(void)
+        {
+            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->SuspendLayout();
+            // 
+            // label1
+            // 
+            this->label1->AutoSize = true;
+            this->label1->Location = System::Drawing::Point(13, 9);
+            this->label1->Name = L"label1";
+            this->label1->Size = System::Drawing::Size(480, 39);
+            this->label1->TabIndex = 0;
+            this->label1->Text = L"Р”Р°РЅРЅРѕРµ РїСЂРёР»РѕР¶РµРЅРёРµ РїРѕР·РІРѕР»СЏРµС‚ С…СЂР°РЅРёС‚СЊ РЅРѕРјРµСЂР° С‚РµР»РµС„РѕРЅРѕРІ Р°Р±РѕРЅРµРЅС‚РѕРІ.\r\nР’ РЅРµРј РµСЃС‚СЊ РІРѕР·РјРѕ"
+                L"Р¶РЅРѕСЃС‚СЊ РґРѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ, РёР·РјРµРЅРёС‚СЊ Р·Р°РїРёСЃСЊ, РЅР°Р№С‚Рё Р·Р°РїРёСЃСЊ, СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ,\r\nСЃРѕС…СЂР°РЅРёС‚"
+                L"СЊ РєРЅРёРіСѓ РІ С„Р°Р№Р», СЃС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ РёР· С„Р°Р№Р»Р°.";
+            // 
+            // AboutBox
+            // 
+            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+            this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+            this->ClientSize = System::Drawing::Size(505, 345);
+            this->Controls->Add(this->label1);
+            this->Name = L"AboutBox";
+            this->Text = L"РЎРїСЂР°РІРєР°";
+            this->ResumeLayout(false);
+            this->PerformLayout();
 
-		}
+        }
 #pragma endregion
-	};
+    };
 }

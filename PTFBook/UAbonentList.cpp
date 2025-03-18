@@ -1,76 +1,76 @@
 #include "UAbonentList.h"
 
-// перерузка оператора []
+// РїРµСЂРµСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° []
 const TAbonent& TAbonentList::operator[](const int& i) const
 {
-	// проверка правильности параметра i
-	if (i < 0 || i >= count())
-	{
-		throw std::string{ "Error! Wrong index...\n" };
-	}
+    // РїСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РїР°СЂР°РјРµС‚СЂР° i
+    if (i < 0  || i >= count())
+    {
+        throw std::string{ "Error! Wrong index...\n" };
+    }
 
-	auto it = std::next(flist.begin(), i);	// получаем итератор на i-ый элемент
-	return *it;	// возвращаем разыменованный иетратор
+    auto it = std::next(flist.begin(), i);  // РїРѕР»СѓС‡Р°РµРј РёС‚РµСЂР°С‚РѕСЂ РЅР° i-С‹Р№ СЌР»РµРјРµРЅС‚
+    return *it;  // РІРѕР·РІСЂР°С‰Р°РµРј СЂР°Р·С‹РјРµРЅРѕРІР°РЅРЅС‹Р№ РёРµС‚СЂР°С‚РѕСЂ
 }
 
-// найти запись
+// РЅР°Р№С‚Рё Р·Р°РїРёСЃСЊ
 int TAbonentList::find(const TAbonent& rec) const
 {
-	auto it = flist.find(rec);	// получение итератора на заданный элемент	
+    auto it = flist.find(rec);  // РїРѕР»СѓС‡РµРЅРёРµ РёС‚РµСЂР°С‚РѕСЂР° РЅР° Р·Р°РґР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚  
 
-	if (it != flist.end())	// проверяем что элемент был найден
-	{
-		return std::distance(flist.begin(), it);	// получем расстояние от начала списка до найденного итератора (это и будет номер позиции)
-	}
-	else
-	{
-		throw std::string{ "Error! Element doesnt exist...\n" };
-	}
+    if (it != flist.end())  // РїСЂРѕРІРµСЂСЏРµРј С‡С‚Рѕ СЌР»РµРјРµРЅС‚ Р±С‹Р» РЅР°Р№РґРµРЅ
+    {
+        return std::distance(flist.begin(), it);  // РїРѕР»СѓС‡РµРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° РґРѕ РЅР°Р№РґРµРЅРЅРѕРіРѕ РёС‚РµСЂР°С‚РѕСЂР° (СЌС‚Рѕ Рё Р±СѓРґРµС‚ РЅРѕРјРµСЂ РїРѕР·РёС†РёРё)
+    }
+    else
+    {
+        throw std::string{ "Error! Element doesnt exist...\n" };
+    }
 }
 
-// поиск записи по одному из полей
+// РїРѕРёСЃРє Р·Р°РїРёСЃРё РїРѕ РѕРґРЅРѕРјСѓ РёР· РїРѕР»РµР№
 int TAbonentList::find(const std::string& field, const int& start_pos) const
 {
-	auto start_it = std::next(flist.begin(), start_pos);
+    auto start_it = std::next(flist.begin(), start_pos);
 
-	auto it = std::find_if(start_it, flist.end(), [&field](const TAbonent& rec) {return rec.get().name == field || rec.get().phone_number == field;});
+    auto it = std::find_if(start_it, flist.end(), [&field](const TAbonent& rec) {return rec.get().name == field  || rec.get().phone_number == field;});
 
-	if (it != flist.end())	// проверяем что элемент был найден
-	{
-		return std::distance(flist.begin(), it);	// получем расстояние от начала списка до найденного итератора (это и будет номер позиции)
-	}
-	else
-	{
-		throw std::string{ "Error! Element doesnt exist...\n" };
-	}
+    if (it != flist.end())  // РїСЂРѕРІРµСЂСЏРµРј С‡С‚Рѕ СЌР»РµРјРµРЅС‚ Р±С‹Р» РЅР°Р№РґРµРЅ
+    {
+        return std::distance(flist.begin(), it);  // РїРѕР»СѓС‡РµРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР° РґРѕ РЅР°Р№РґРµРЅРЅРѕРіРѕ РёС‚РµСЂР°С‚РѕСЂР° (СЌС‚Рѕ Рё Р±СѓРґРµС‚ РЅРѕРјРµСЂ РїРѕР·РёС†РёРё)
+    }
+    else
+    {
+        throw std::string{ "Error! Element doesnt exist...\n" };
+    }
 }
 
-// удалить запись
+// СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ
 void TAbonentList::deleteRec(const TAbonent& rec)
 {
-	int f = flist.erase(rec);
+    int f = flist.erase(rec);
 
-	if (!f)
-	{
-		throw std::string{ "Error! Element doesnt exist...\n" };
-	}
+    if (!f)
+    {
+        throw std::string{ "Error! Element doesnt exist...\n" };
+    }
 }
 
-// удалить выделенную запись
+// СѓРґР°Р»РёС‚СЊ РІС‹РґРµР»РµРЅРЅСѓСЋ Р·Р°РїРёСЃСЊ
 void TAbonentList::deleteRec(const int& i)
 {
-	// проверка правильности параметра i
-	if (i < 0 || i >= count())
-	{
-		throw std::string{ "Error! Wrong index...\n" };
-	}
+    // РїСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РїР°СЂР°РјРµС‚СЂР° i
+    if (i < 0 || i >= count())
+    {
+        throw std::string{ "Error! Wrong index...\n" };
+    }
 
-	auto it = std::next(flist.begin(), i);	// получаем итератор на i-ый элемент
-	flist.erase(it);	// удаляем элемент
+    auto it = std::next(flist.begin(), i);  // РїРѕР»СѓС‡Р°РµРј РёС‚РµСЂР°С‚РѕСЂ РЅР° i-С‹Р№ СЌР»РµРјРµРЅС‚
+    flist.erase(it);  // СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚
 }
 
 void TAbonentList::add(const TAbonent& rec)
 {
-	if (!flist.insert(rec).second)
-		throw std::string{ "Error! Element already exists...\n" };
+    if (!flist.insert(rec).second)
+        throw std::string{ "Error! Element already exists...\n" };
 }

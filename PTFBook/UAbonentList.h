@@ -3,32 +3,32 @@
 
 class TAbonentList
 {
-	std::set<TAbonent> flist;	// список абонентов
+	std::set<TAbonent> flist;  // СЃРїРёСЃРѕРє Р°Р±РѕРЅРµРЅС‚РѕРІ
 
 public:
 	friend class TControl;
 
-	// перегрузка оператора []
+	// РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° []
 	const TAbonent& operator[](const int& i) const;
 
-	// получение количества записей
+	// РїРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° Р·Р°РїРёСЃРµР№
 	int count() const { return flist.size(); }
 
-	// добавить запись
+	// РґРѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ
 	void add(const TAbonent& rec);
 
-	// найти запись
+	// РЅР°Р№С‚Рё Р·Р°РїРёСЃСЊ
 	int find(const TAbonent& rec) const;
 
-	// поиск записи по одному из полей
+	// РїРѕРёСЃРє Р·Р°РїРёСЃРё РїРѕ РѕРґРЅРѕРјСѓ РёР· РїРѕР»РµР№
 	int find(const std::string& field, const int& start_pos = 0) const;
 
-	// удалить запись
+	// СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ
 	void deleteRec(const TAbonent& rec);
 
-	// удалить выделенную запись
+	// СѓРґР°Р»РёС‚СЊ РІС‹РґРµР»РµРЅРЅСѓСЋ Р·Р°РїРёСЃСЊ
 	void deleteRec(const int& i);
 
-	// очистить список
+	// РѕС‡РёСЃС‚РёС‚СЊ СЃРїРёСЃРѕРє
 	void clear() { flist.clear(); }
 };

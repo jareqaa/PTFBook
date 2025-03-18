@@ -1,53 +1,51 @@
 #include "UControl.h"
 #include <fstream>
 
-// сохранение книги в файл
+// СЃРѕС…СЂР°РЅРµРЅРёРµ РєРЅРёРіРё РІ С„Р°Р№Р»
 void TControl::saveToFile() const
 {
-	std::ofstream file;
-	file.open(file_name);	// открываем файл
+    std::ofstream file;
+    file.open(file_name);  // РѕС‚РєСЂС‹РІР°РµРј С„Р°Р№Р»
 
-	// проверка что файл открылся
-	if (!file.is_open())
-	{
-		throw std::string{ "Error! Cant open file...\n" };
-	}
+    // РїСЂРѕРІРµСЂРєР° С‡С‚Рѕ С„Р°Р№Р» РѕС‚РєСЂС‹Р»СЃСЏ
+    if (!file.is_open())
+    {
+        throw std::string{ "Error! Cant open file...\n" };
+    }
 
-	// запись в файл
-	for (auto it = fl.flist.begin(); it != fl.flist.end(); it++)
-	{
-		file << it->get().name << std::endl << it->get().phone_number << std::endl;	// сохранение записей в виде строк: <имя> <номер телефона>
-	}
+    // Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р»
+    for (auto it = fl.flist.begin(); it != fl.flist.end(); it++)
+    {
+        file << it->get().name << std::endl << it->get().phone_number << std::endl;  // СЃРѕС…СЂР°РЅРµРЅРёРµ Р·Р°РїРёСЃРµР№ РІ РІРёРґРµ СЃС‚СЂРѕРє: <РёРјСЏ> <РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°>
+    }
 
-	file.close();	// закрываем файл
+    file.close();  // Р·Р°РєСЂС‹РІР°РµРј С„Р°Р№Р»
 }
 
-// копирование книги из файла
+// РєРѕРїРёСЂРѕРІР°РЅРёРµ РєРЅРёРіРё РёР· С„Р°Р№Р»Р°
 void TControl::readFromFile()
 {
-	std::ifstream file;
-	file.open(file_name);
+    std::ifstream file;
+    file.open(file_name);
 
-	// проверка что файл открылся
-	if (!file.is_open())
-	{
-		throw std::string{ "Error! Cant open file...\n" };
-	}
+    // РїСЂРѕРІРµСЂРєР° С‡С‚Рѕ С„Р°Р№Р» РѕС‚РєСЂС‹Р»СЃСЏ
+    if (!file.is_open())
+    {
+        throw std::string{ "Error! Cant open file...\n" };
+    }
 
-	clear();
+    clear();
 
-	// чтение из файла
-	std::string name, phone_number;
-	while (!file.eof())
-	{
-		std::getline(file, name);
-		if (name == "")
-			break;
-		std::getline(file, phone_number);
-		add(TAbonent(name, phone_number));
-	}
+    // С‡С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р°
+    std::string name, phone_number;
+    while (!file.eof())
+    {
+        std::getline(file, name);
+        if (name == "")
+            break;
+        std::getline(file, phone_number);
+        add(TAbonent(name, phone_number));
+    }
 
-	file.close();
+    file.close();
 }
-
-

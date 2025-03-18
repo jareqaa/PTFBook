@@ -2,35 +2,36 @@
 
 struct Trec
 {
-	std::string name;			// имя абонента
-	std::string phone_number;	// номер телефона абонента
+    std::string name;      // РёРјСЏ Р°Р±РѕРЅРµРЅС‚Р°
+    std::string phone_number;  // РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° Р°Р±РѕРЅРµРЅС‚Р°
 
-	// конструктор
-	Trec(const std::string& name_, const std::string& phone_number_) : 
-		name(!name_.empty() ? name_ : throw std::string{"Error! Empty input...\n"}), 
-		phone_number(!phone_number_.empty() ? phone_number_ : throw std::string{ "Error! Empty input...\n" }) {}
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    Trec(const std::string& name_, const std::string& phone_number_) :
+        name(!name_.empty() ? name_ : throw std::string{ "Error! Empty input...\n" }),
+        phone_number(!phone_number_.empty() ? phone_number_ : throw std::string{ "Error! Empty input...\n" }) {
+    }
 
-	// перегрузка оператора <
-	bool operator<(const Trec& other) const { return name == other.name ? phone_number < other.phone_number : name < other.name; }
+    // РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° <
+    bool operator<(const Trec& other) const { return name == other.name ? phone_number < other.phone_number : name < other.name; }
 };
 
 class TAbonent
 {
-	Trec frec;	// запись по абоненту
+    Trec frec;  // Р·Р°РїРёСЃСЊ РїРѕ Р°Р±РѕРЅРµРЅС‚Сѓ
 
 public:
-	// Конструктор с параметрами name и phone_number
-	TAbonent(const std::string& name, const std::string& phone_number) : frec(name, phone_number) {}
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё name Рё phone_number
+    TAbonent(const std::string& name, const std::string& phone_number) : frec(name, phone_number) {}
 
-	// полуение записи
-	Trec get() const { return frec; }
+    // РїРѕР»СѓРµРЅРёРµ Р·Р°РїРёСЃРё
+    Trec get() const { return frec; }
 
-	// получение строки
-	std::string toStr() const { return frec.name + "     " + frec.phone_number; }
+    // РїРѕР»СѓС‡РµРЅРёРµ СЃС‚СЂРѕРєРё
+    std::string toStr() const { return frec.name + "     " + frec.phone_number; }
 
-	// изменение записи
-	void set(const Trec& frec_) { frec = frec_; }
+    // РёР·РјРµРЅРµРЅРёРµ Р·Р°РїРёСЃРё
+    void set(const Trec& frec_) { frec = frec_; }
 
-	// пергрузка оператора <
-	bool operator<(const TAbonent& other) const { return frec < other.frec; }
+    // РїРµСЂРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° <
+    bool operator<(const TAbonent& other) const { return frec < other.frec; }
 };

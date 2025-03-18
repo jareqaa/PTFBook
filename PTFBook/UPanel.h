@@ -13,7 +13,7 @@ namespace PTFBook {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для UPanel
+	/// РЎРІРѕРґРєР° РґР»СЏ UPanel
 	/// </summary>
 	public ref class UPanel : public System::Windows::Forms::Form
 	{
@@ -22,13 +22,13 @@ namespace PTFBook {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~UPanel()
 		{
@@ -52,20 +52,20 @@ namespace PTFBook {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ выходToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ спарвкаToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІС‹С…РѕРґToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ СЃРїР°СЂРІРєР°ToolStripMenuItem;
 	private: System::Windows::Forms::Button^ button7;
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -81,8 +81,8 @@ namespace PTFBook {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->выходToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->спарвкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІС‹С…РѕРґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->СЃРїР°СЂРІРєР°ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -102,7 +102,7 @@ namespace PTFBook {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(34, 13);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"ФИО";
+			this->label1->Text = L"Р¤РРћ";
 			// 
 			// textBox2
 			// 
@@ -119,7 +119,7 @@ namespace PTFBook {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(93, 13);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Номер телефона";
+			this->label2->Text = L"РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°";
 			// 
 			// button1
 			// 
@@ -127,7 +127,7 @@ namespace PTFBook {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 20);
 			this->button1->TabIndex = 4;
-			this->button1->Text = L"добавить";
+			this->button1->Text = L"РґРѕР±Р°РІРёС‚СЊ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &UPanel::button1_Click);
 			// 
@@ -137,7 +137,7 @@ namespace PTFBook {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 20);
 			this->button2->TabIndex = 5;
-			this->button2->Text = L"найти";
+			this->button2->Text = L"РЅР°Р№С‚Рё";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &UPanel::button2_Click);
 			// 
@@ -147,7 +147,7 @@ namespace PTFBook {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 6;
-			this->button3->Text = L"очистить";
+			this->button3->Text = L"РѕС‡РёСЃС‚РёС‚СЊ";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &UPanel::button3_Click);
 			// 
@@ -157,7 +157,7 @@ namespace PTFBook {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 7;
-			this->button4->Text = L"сохранить";
+			this->button4->Text = L"СЃРѕС…СЂР°РЅРёС‚СЊ";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &UPanel::button4_Click);
 			// 
@@ -167,7 +167,7 @@ namespace PTFBook {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 8;
-			this->button5->Text = L"удалить";
+			this->button5->Text = L"СѓРґР°Р»РёС‚СЊ";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &UPanel::button5_Click);
 			// 
@@ -177,7 +177,7 @@ namespace PTFBook {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(75, 23);
 			this->button6->TabIndex = 9;
-			this->button6->Text = L"изменить";
+			this->button6->Text = L"РёР·РјРµРЅРёС‚СЊ";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &UPanel::button6_Click);
 			// 
@@ -193,8 +193,8 @@ namespace PTFBook {
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->выходToolStripMenuItem,
-					this->спарвкаToolStripMenuItem
+				this->РІС‹С…РѕРґToolStripMenuItem,
+					this->СЃРїР°СЂРІРєР°ToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -202,19 +202,19 @@ namespace PTFBook {
 			this->menuStrip1->TabIndex = 11;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// выходToolStripMenuItem
+			// РІС‹С…РѕРґToolStripMenuItem
 			// 
-			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
-			this->выходToolStripMenuItem->Size = System::Drawing::Size(54, 20);
-			this->выходToolStripMenuItem->Text = L"Выход";
-			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &UPanel::выходToolStripMenuItem_Click);
+			this->РІС‹С…РѕРґToolStripMenuItem->Name = L"РІС‹С…РѕРґToolStripMenuItem";
+			this->РІС‹С…РѕРґToolStripMenuItem->Size = System::Drawing::Size(54, 20);
+			this->РІС‹С…РѕРґToolStripMenuItem->Text = L"Р’С‹С…РѕРґ";
+			this->РІС‹С…РѕРґToolStripMenuItem->Click += gcnew System::EventHandler(this, &UPanel::РІС‹С…РѕРґToolStripMenuItem_Click);
 			// 
-			// спарвкаToolStripMenuItem
+			// СЃРїР°СЂРІРєР°ToolStripMenuItem
 			// 
-			this->спарвкаToolStripMenuItem->Name = L"спарвкаToolStripMenuItem";
-			this->спарвкаToolStripMenuItem->Size = System::Drawing::Size(65, 20);
-			this->спарвкаToolStripMenuItem->Text = L"Спарвка";
-			this->спарвкаToolStripMenuItem->Click += gcnew System::EventHandler(this, &UPanel::спарвкаToolStripMenuItem_Click);
+			this->СЃРїР°СЂРІРєР°ToolStripMenuItem->Name = L"СЃРїР°СЂРІРєР°ToolStripMenuItem";
+			this->СЃРїР°СЂРІРєР°ToolStripMenuItem->Size = System::Drawing::Size(65, 20);
+			this->СЃРїР°СЂРІРєР°ToolStripMenuItem->Text = L"РЎРїР°СЂРІРєР°";
+			this->СЃРїР°СЂРІРєР°ToolStripMenuItem->Click += gcnew System::EventHandler(this, &UPanel::СЃРїР°СЂРІРєР°ToolStripMenuItem_Click);
 			// 
 			// button7
 			// 
@@ -222,7 +222,7 @@ namespace PTFBook {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(75, 23);
 			this->button7->TabIndex = 12;
-			this->button7->Text = L"загрузить";
+			this->button7->Text = L"Р·Р°РіСЂСѓР·РёС‚СЊ";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &UPanel::button7_Click);
 			// 
@@ -246,7 +246,7 @@ namespace PTFBook {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"UPanel";
-			this->Text = L"Телефонная книга";
+			this->Text = L"РўРµР»РµС„РѕРЅРЅР°СЏ РєРЅРёРіР°";
 			this->Load += gcnew System::EventHandler(this, &UPanel::UPanel_Load);
 			this->Click += gcnew System::EventHandler(this, &UPanel::UPanel_Click);
 			this->menuStrip1->ResumeLayout(false);
@@ -256,12 +256,12 @@ namespace PTFBook {
 
 		}
 #pragma endregion
-		// кнопка выход
-	private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		// РєРЅРѕРїРєР° РІС‹С…РѕРґ
+	private: System::Void РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 
-		   // обновление отображаемого списка записей в телефонной книге
+		   // РѕР±РЅРѕРІР»РµРЅРёРµ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ СЃРїРёСЃРєР° Р·Р°РїРёСЃРµР№ РІ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРµ
 	private: System::Void updateListBox() {
 		listBox1->Items->Clear();
 		textBox1->Text = "";
@@ -275,19 +275,19 @@ namespace PTFBook {
 		}
 	}
 
-		   // обработка нажатия на кнопку справка
-	private: System::Void спарвкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		   // РѕР±СЂР°Р±РѕС‚РєР° РЅР°Р¶Р°С‚РёСЏ РЅР° РєРЅРѕРїРєСѓ СЃРїСЂР°РІРєР°
+	private: System::Void СЃРїР°СЂРІРєР°ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		AboutBox^ aboutBox = gcnew AboutBox();
-		aboutBox->Show();	// открытие формы справки
+		aboutBox->Show();	// РѕС‚РєСЂС‹С‚РёРµ С„РѕСЂРјС‹ СЃРїСЂР°РІРєРё
 	}
 
-		   // добавление абонента в телефонную книгу
+		   // РґРѕР±Р°РІР»РµРЅРёРµ Р°Р±РѕРЅРµРЅС‚Р° РІ С‚РµР»РµС„РѕРЅРЅСѓСЋ РєРЅРёРіСѓ
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		// получение данных об абоненте
+		// РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РѕР± Р°Р±РѕРЅРµРЅС‚Рµ
 		std::string name = msclr::interop::marshal_as<std::string>(textBox1->Text);
 		std::string phone_number = msclr::interop::marshal_as<std::string>(textBox2->Text);
 
-		// добавление записи
+		// РґРѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРё
 		try
 		{
 			ctl->add(TAbonent(name, phone_number));
@@ -300,13 +300,13 @@ namespace PTFBook {
 		updateListBox();
 	}
 
-		   // очитска телефонной книги
+		   // РѕС‡РёС‚СЃРєР° С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		ctl->clear();
 		updateListBox();
 	}
 
-		   // удаление элемента
+		   // СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
 		{
@@ -320,7 +320,7 @@ namespace PTFBook {
 		updateListBox();
 	}
 
-		   // сохранение телефонной книги в файл
+		   // СЃРѕС…СЂР°РЅРµРЅРёРµ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё РІ С„Р°Р№Р»
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
 		{
@@ -335,9 +335,9 @@ namespace PTFBook {
 		}
 	}
 
-		   // изменение записи
+		   // РёР·РјРµРЅРµРЅРёРµ Р·Р°РїРёСЃРё
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		// получение данных об абоненте
+		// РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РѕР± Р°Р±РѕРЅРµРЅС‚Рµ
 		std::string name = msclr::interop::marshal_as<std::string>(textBox1->Text);
 		std::string phone_number = msclr::interop::marshal_as<std::string>(textBox2->Text);
 
@@ -354,12 +354,12 @@ namespace PTFBook {
 		updateListBox();
 	}
 
-		   // поиск записи
+		   // РїРѕРёСЃРє Р·Р°РїРёСЃРё
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string name = msclr::interop::marshal_as<std::string>(textBox1->Text);
 		std::string phone_number = msclr::interop::marshal_as<std::string>(textBox2->Text);
 
-		// проверяем не был ли достигнут конец списка записей
+		// РїСЂРѕРІРµСЂСЏРµРј РЅРµ Р±С‹Р» Р»Рё РґРѕСЃС‚РёРіРЅСѓС‚ РєРѕРЅРµС† СЃРїРёСЃРєР° Р·Р°РїРёСЃРµР№
 		if (ind >= listBox1->Items->Count && ind != 0)
 		{
 			MessageBox::Show("Error! End of list...\n", "Error!", MessageBoxButtons::OK);
@@ -368,7 +368,7 @@ namespace PTFBook {
 			return;
 		}
 
-		// првоерка на пустой ввод
+		// РїСЂРІРѕРµСЂРєР° РЅР° РїСѓСЃС‚РѕР№ РІРІРѕРґ
 		if (name.empty() && phone_number.empty())
 		{
 			MessageBox::Show("Error! Wrong input...\n", "Error!", MessageBoxButtons::OK);
@@ -378,7 +378,7 @@ namespace PTFBook {
 
 		try
 		{
-			// поиск по номеру телефона и имени
+			// РїРѕРёСЃРє РїРѕ РЅРѕРјРµСЂСѓ С‚РµР»РµС„РѕРЅР° Рё РёРјРµРЅРё
 			if (!name.empty() && !phone_number.empty())
 			{
 				int index = ctl->find(TAbonent(name, phone_number));
@@ -392,7 +392,7 @@ namespace PTFBook {
 				}
 				listBox1->SelectedIndex = index;
 			}
-			// поиск только по номеру телефона
+			// РїРѕРёСЃРє С‚РѕР»СЊРєРѕ РїРѕ РЅРѕРјРµСЂСѓ С‚РµР»РµС„РѕРЅР°
 			else if (name.empty() && !phone_number.empty())
 			{
 				int a = ind;
@@ -400,7 +400,7 @@ namespace PTFBook {
 				ind = index + 1;
 				listBox1->SelectedIndex = index;
 			}
-			// поиск только по имени
+			// РїРѕРёСЃРє С‚РѕР»СЊРєРѕ РїРѕ РёРјРµРЅРё
 			else
 			{
 				int a = ind;
@@ -434,7 +434,7 @@ namespace PTFBook {
 		ind = 0;
 	}
 
-		   // загрузка формы
+		   // Р·Р°РіСЂСѓР·РєР° С„РѕСЂРјС‹
 	private: System::Void UPanel_Load(System::Object^ sender, System::EventArgs^ e) {
 		try
 		{
@@ -447,7 +447,7 @@ namespace PTFBook {
 		}
 	}
 
-		   // изменение выделения записи
+		   // РёР·РјРµРЅРµРЅРёРµ РІС‹РґРµР»РµРЅРёСЏ Р·Р°РїРёСЃРё
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (listBox1->SelectedIndex < 0)
 		{
