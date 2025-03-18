@@ -1,8 +1,8 @@
-#include "UControl.h"
+#include "UFile.h"
 #include <fstream>
 
 // сохранение книги в файл
-void TControl::saveToFile() const
+void TFile::saveToFile(const TAbonentList& fl) const
 {
     std::ofstream file;
     file.open(file_name);  // открываем файл
@@ -14,7 +14,7 @@ void TControl::saveToFile() const
     }
 
     // запись в файл
-    for (auto it = fl.flist.begin(); it != fl.flist.end(); it++)
+    for (auto it = fl.getBegin(); it != fl.getEnd(); it++)
     {
         file << it->get().name << std::endl << it->get().phone_number << std::endl;  // сохранение записей в виде строк: <имя> <номер телефона>
     }
@@ -23,7 +23,7 @@ void TControl::saveToFile() const
 }
 
 // копирование книги из файла
-void TControl::readFromFile()
+void TFile::readFromFile(TAbonentList& fl) const
 {
     std::ifstream file;
     file.open(file_name);
@@ -34,7 +34,7 @@ void TControl::readFromFile()
         throw std::string{ "Error! Cant open file...\n" };
     }
 
-    clear();
+    fl.clear();
 
     // чтение из файла
     std::string name, phone_number;
@@ -44,7 +44,7 @@ void TControl::readFromFile()
         if (name == "")
             break;
         std::getline(file, phone_number);
-        add(TAbonent(name, phone_number));
+        fl.add(TAbonent(name, phone_number));
     }
 
     file.close();

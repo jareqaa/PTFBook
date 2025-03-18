@@ -1,10 +1,12 @@
+#pragma once
 #include "UAbonentList.h"
+#include "UFile.h"
 
 class TControl
 {
 	TAbonentList fl;  // список абонентов
 
-	std::string file_name = "file.txt";  // имя файла на диске
+	TFile ff;  // объект для работы с файлом
 
 public:
 
@@ -36,10 +38,10 @@ public:
 	void clear() { fl.clear(); }
 
 	// сохранение книги в файл
-	void saveToFile() const;
+	void saveToFile() const { ff.saveToFile(fl); }
 
 	// копирование книги из файла
-	void readFromFile();
+	void readFromFile() { ff.readFromFile(fl); }
 
 	// поиск записи в книге
 	int find(const TAbonent& rec) const { return fl.find(rec); }
@@ -48,8 +50,8 @@ public:
 	int find(const std::string& field, const int& start_pos = 0) const { return fl.find(field, start_pos); }
 
 	// получение имени файла
-	std::string getFileName() const { return file_name; }
+	std::string getFileName() const { return ff.getFileName(); }
 
 	// изменение имени файла
-	void setFileName(std::string& new_file_name) { file_name = new_file_name; }
+	void setFileName(std::string& new_file_name) { ff.setFileName(new_file_name); }
 };

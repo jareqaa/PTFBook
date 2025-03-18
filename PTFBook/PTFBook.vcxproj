@@ -79,6 +79,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -118,6 +119,7 @@
     <ClInclude Include="UAbonent.h" />
     <ClInclude Include="UAbonentList.h" />
     <ClInclude Include="UControl.h" />
+    <ClInclude Include="UFile.h" />
     <ClInclude Include="UPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -125,7 +127,7 @@
   <ItemGroup>
     <ClCompile Include="AboutBox.cpp" />
     <ClCompile Include="UAbonentList.cpp" />
-    <ClCompile Include="UControl.cpp" />
+    <ClCompile Include="UFile.cpp" />
     <ClCompile Include="UPanel.cpp" />
   </ItemGroup>
   <ItemGroup>

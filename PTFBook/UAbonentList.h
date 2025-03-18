@@ -1,3 +1,4 @@
+#pragma once
 #include <set>
 #include "UAbonent.h"
 
@@ -6,7 +7,6 @@ class TAbonentList
 	std::set<TAbonent> flist;  // список абонентов
 
 public:
-	friend class TControl;
 
 	// перегрузка оператора []
 	const TAbonent& operator[](const int& i) const;
@@ -31,4 +31,10 @@ public:
 
 	// очистить список
 	void clear() { flist.clear(); }
+
+	// получить итератор на начло множества
+	std::set<TAbonent>::const_iterator getBegin() const { return flist.begin(); }
+
+	// получить итератор на конец множества
+	std::set<TAbonent>::const_iterator getEnd() const { return flist.end(); }
 };
