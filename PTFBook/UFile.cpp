@@ -41,10 +41,16 @@ void TFile::readFromFile(TAbonentList& fl) const
     std::string name, phone_number;
     while (!file.eof())
     {
+        // считывание имени
         std::getline(file, name);
+        // проверка что не достигнут конец файла
         if (name == "")
             break;
+
+        // считывание номера телефона
         std::getline(file, phone_number);
+
+        // добавление записи
         fl.add(TAbonent(name, phone_number));
     }
 
