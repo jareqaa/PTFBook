@@ -1,19 +1,6 @@
 #include "UAbonentList.h"
 #include "UException.h"
 
-// перерузка оператора []
-const TAbonent& TAbonentList::operator[](const int& i) const
-{
-    // проверка правильности параметра i
-    if (i < 0  || i >= count())
-    {
-        throw TException("Error! Wrong index...\n");
-    }
-
-    auto it = std::next(flist.begin(), i);  // получаем итератор на i-ый элемент
-    return *it;  // возвращаем разыменованный иетратор
-}
-
 // найти запись
 int TAbonentList::find(const TAbonent& rec) const
 {

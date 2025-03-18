@@ -9,7 +9,7 @@ class TAbonentList
 public:
 
 	// перегрузка оператора []
-	const TAbonent& operator[](const int& i) const;
+	const TAbonent& operator[](const int& i) const { return i < 0 || i >= count() ? throw TException("Error! Wrong index...\n") : *(std::next(flist.begin(), i)); }
 
 	// получение количества записей
 	int count() const { return flist.size(); }
