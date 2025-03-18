@@ -427,9 +427,12 @@ namespace PTFBook {
 		}
 	}
 
+		   // изменения поля номера телефона
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		ind = 0;
 	}
+
+		   // изменение поля ФИО
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		ind = 0;
 	}
@@ -462,10 +465,14 @@ namespace PTFBook {
 			textBox2->Text = gcnew String(rec.get().phone_number.c_str());
 		}
 	}
+
+		   // обработка нажатия по окну
 	private: System::Void UPanel_Click(System::Object^ sender, System::EventArgs^ e) {
 		ind = 0;
 		listBox1->SelectedIndex = -1;
 	}
+
+		   // обработка нажатия на кнопку загрузить
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
 		{
