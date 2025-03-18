@@ -119,6 +119,7 @@
     <ClInclude Include="UAbonent.h" />
     <ClInclude Include="UAbonentList.h" />
     <ClInclude Include="UControl.h" />
+    <ClInclude Include="UException.h" />
     <ClInclude Include="UFile.h" />
     <ClInclude Include="UPanel.h">
       <FileType>CppForm</FileType>
